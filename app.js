@@ -2,11 +2,11 @@ import express from 'express';
 import dotenv from 'dotenv';
 import conn from "./db.js";
 import pageRoute from "./routes/pageRoutes.js";
-import photoRoute from "./routes/photoRoute.js";
 import newsRouter from "./routes/news.js";
 import sportsRouter from "./routes/sports.js";
 import searchRouter from "./routes/searchRoute.js";
 import healthRouter from "./routes/health.js";
+import healthRouter from "./routes";
 
 
 dotenv.config();
@@ -29,12 +29,14 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use("/", pageRoute);
 
-app.use("/photos", photoRoute);
 
 app.use('/news', newsRouter);
 
 app.use('/sports', sportsRouter);
-app.use('/search', searchRouter)
+
+app.use('/search', searchRouter);
+
+app.use('/about', aboutRouter);
 
 app.use('/health', healthRouter);
 
