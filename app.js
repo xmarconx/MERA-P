@@ -6,8 +6,6 @@ import newsRouter from "./routes/news.js";
 import sportsRouter from "./routes/sports.js";
 import searchRouter from "./routes/searchRoute.js";
 import healthRouter from "./routes/health.js";
-import healthRouter from "./routes";
-
 
 dotenv.config();
 
@@ -35,8 +33,6 @@ app.use('/news', newsRouter);
 app.use('/sports', sportsRouter);
 
 app.use('/search', searchRouter);
-
-app.use('/about', aboutRouter);
 
 app.use('/health', healthRouter);
 

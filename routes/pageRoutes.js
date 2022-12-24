@@ -12,5 +12,9 @@ router.route("/blog-single").get(pageController.getBlogSinglePage);
 
 router.route("/contact").get(pageController.getContactPage);
 
+router.route("/about").get(pageController.getAbouttPage);
+
+
+
 
 export default router;
