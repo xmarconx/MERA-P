@@ -1,0 +1,100 @@
+<%- include("partials/_header") %>
+    <%- include("partials/_menu") %>
+        <div class="site-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-9">
+                        <div class="section-title">
+                            <span class="caption d-block small">Categories</span>
+                            <h2>Business</h2>
+                        </div>
+                        <% if(articles && articles.status === "ok") { %>
+                            <% articles.articles.forEach(function(article, index) { %>
+                                <% if (index % 20 === 0) { %>
+                                    <!-- Sayfalama butonlarını oluştur -->
+                                    <% } %>
+                                        <div class="post-entry-2 d-flex">
+                                            <div class="thumbnail order-md-2" style="background-image: url('<%= article.urlToImage %>')"></div>
+                                            <div class="contents order-md-1 pl-0">
+                                                <h2>
+                                                    <a href="blog-single.html">
+                                                        <%= article.title %>
+                                                    </a>
+                                                </h2>
+                                                <p class="mb-3">
+                                                    <%= article.description %>
+                                                </p>
+                                                <div class="post-meta">
+                                                    <span class="d-block"><a href="#"><%= article.name %></a> in <a href="#">News</a></span>
+                                                    <span class="date-read"><%= article.publishedAt %> <span class="mx-1">&bullet;</span> 3 min read <span class="icon-star2"></span></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <% }); %>
+                                            <% } %>
+                    </div>
+
+
+                    <div class="col-lg-3">
+                        <div class="section-title">
+                            <h2>Popular Posts</h2>
+                        </div>
+                        <div class="trend-entry-container">
+                            <% if(articles && articles.status === "ok") { %>
+                                <% articles.articles.forEach(function(article, index) { %>
+                                    <% if (index < 4) { %>
+                                        <div class="trend-entry d-flex pl-0">
+                                            <div class="number align-self-start">04</div>
+                                            <div class="trend-contents">
+                                                <h2>
+                                                    <a href="blog-single.html">
+                                                        <%= article.description %>
+                                                    </a>
+                                                </h2>
+                                                <div class="post-meta">
+                                                    <span class="d-block"><a href="#"><%= article.title %></a> in <a href="#">News</a></span>
+                                                    <span class="date-read"><%= article.publishedAt %> <span class="mx-1">&bullet;</span> 3 min read <span class="icon-star2"></span></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <% } else { %>
+                                            <% return; %>
+                                                <% } %>
+                                                    <% }); %>
+                                                        <% } %>
+                        </div>
+                        <p>
+                            <a href="#" class="more">See All Popular <span class="icon-keyboard_arrow_right"></span></a>
+                        </p>
+                    </div>
+
+
+
+
+
+
+
+                    <div class="col-lg-6">
+                        <ul class="custom-pagination list-unstyled">
+                            <% for (let a = 1; a <= pages; a++) { %>
+                                <li class="<%= (page == a) ? 'active' : '' %>">
+                                    <a href="?page=<%= a %>">
+                                        <%= a %>
+                                    </a>
+                                </li>
+                                <% } %>
+                        </ul>
+                    </div>
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <%- include("partials/_footer") %>
