@@ -11,7 +11,7 @@ import scienceRouter from "./routes/science.js";
 import technologyRouter from "./routes/technology.js";
 import generalRouter from "./routes/general.js";
 import entertainmentRouter from "./routes/entertainment.js";
-//import categoriesRouter from "./routes/categories.js";
+import categorysRouter from "./routes/categorys.js";
 
 dotenv.config();
 
@@ -53,7 +53,10 @@ app.use('/general', generalRouter);
 
 app.use('/entertainment', entertainmentRouter);
 
-//app.use('/categories', categoriesRouter);
+app.use('/categorys', categorysRouter);
+
+
+
 
 
 app.listen(port, () => {

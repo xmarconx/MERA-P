@@ -127,12 +127,14 @@
                     event.preventDefault()
                     const q = event.target.q.value
 
-                    const searchParams = new URLSearchParams(window.location.search)
-                    searchParams.set("q", q)
-                    searchParams.delete("page")
-                    const newRelativePathQuery = window.location.pathname + "?" + searchParams.toString()
-                    history.pushState(null, "", newRelativePathQuery)
-                    window.location.reload()
+                    // const searchParams = new URLSearchParams(window.location.search)
+                    // searchParams.set("q", q)
+                    // searchParams.delete("page")
+                    // const newRelativePathQuery = window.location.pathname + "?" + searchParams.toString()
+                    // history.pushState(null, "", newRelativePathQuery)
+                    // window.location.reload()
+
+                    window.location.href = "/categorys?q=" + q
 
                     return false
                 }
