@@ -45,9 +45,6 @@
 
 	}
 
-	const getCategoriesPage = (req, res) => {
-	    res.render("categories");
-	}
 
 	const getBlogSinglePage = (req, res) => {
 	    res.render("blog-single");
@@ -60,9 +57,9 @@
 	const getAbouttPage = (req, res) => {
 	    res.render("about");
 	}
-	
 
 
 
 
-	export { getIndexPage, getCategoriesPage, getBlogSinglePage, getContactPage, getAbouttPage }
+
+	export { getIndexPage, getBlogSinglePage, getContactPage, getAbouttPage }
